@@ -20,10 +20,10 @@ export class HomePage {
   loadMap() {
 
     // This code is necessary for browser
-    Environment.setEnv({
-      'API_KEY_FOR_BROWSER_RELEASE': '',
-      'API_KEY_FOR_BROWSER_DEBUG': ''
-    });
+    // Environment.setEnv({
+    //   'API_KEY_FOR_BROWSER_RELEASE': '',
+    //   'API_KEY_FOR_BROWSER_DEBUG': ''
+    // });
 
     let mapOptions: GoogleMapOptions = {
       camera: {
