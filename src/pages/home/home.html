@@ -1,16 +1,19 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
+  <h3>Ionic Menu Starter</h3>
+
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
   </p>
+
   <div id="map_canvas" class="mapa">
     <button ion-button (click)="onButtonClick($event)">Start demo</button>
   </div>
