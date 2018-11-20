@@ -1,6 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
+
+import { RegisterPage } from '../register/register';
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -44,6 +47,10 @@ export class LoginPage {
       alert.present();
     }
 
+  }
+
+  signUp() {
+    this.navCtrl.push(RegisterPage)
   }
 
   ionViewDidLoad() {

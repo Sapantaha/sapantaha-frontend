@@ -14,6 +14,7 @@ import { ReportPage } from '../pages/report/report';
 import { HelpPage } from '../pages/help/help';
 import { AboutPage } from '../pages/about/about';
 import { RoutePage } from '../pages/route/route';
+import { RegisterPage } from '../pages/register/register';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { RoutePage } from '../pages/route/route';
     ReportPage,
     HelpPage,
     AboutPage,
-    RoutePage
+    RoutePage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { RoutePage } from '../pages/route/route';
     ReportPage,
     HelpPage,
     AboutPage,
-    RoutePage
+    RoutePage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
