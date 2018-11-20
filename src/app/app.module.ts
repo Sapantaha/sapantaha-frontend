@@ -9,19 +9,33 @@ import { HomePage } from '../pages/home/home';
 
 import { Geolocation } from '@ionic-native/geolocation';
 
+import { LoginPage } from '../pages/login/login';
+import { ReportPage } from '../pages/report/report';
+import { HelpPage } from '../pages/help/help';
+import { AboutPage } from '../pages/about/about';
+
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginPage,
+    ReportPage,
+    HelpPage,
+    AboutPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginPage,
+    ReportPage,
+    HelpPage,
+    AboutPage
   ],
   providers: [
     StatusBar,
