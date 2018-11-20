@@ -5,6 +5,8 @@ import leaflet from 'leaflet';
 import { Geolocation } from '@ionic-native/geolocation';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { RoutePage } from '../route/route';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -46,6 +48,10 @@ export class HomePage {
         alert(err.message);
       });
     // this.map.setView([12.8797, 121.7740], 6);
+  }
+
+  searchRoute(){
+    this.navCtrl.push(RoutePage)
   }
 
 }
