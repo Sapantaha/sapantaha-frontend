@@ -86,6 +86,10 @@
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyCDdZCoPPF-AAHFfEV8Pe0BD4JsRvFNd1o" />
         <variable name="API_KEY_FOR_IOS" value="AIzaSyCDdZCoPPF-AAHFfEV8Pe0BD4JsRvFNd1o" />
     </plugin>
+    <plugin name="cordova-plugin-geolocation" spec="^4.0.1" />
+    <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
+        <string>We need to access your location! Best Regards Sapantaha</string>
+    </edit-config>
     <engine name="browser" spec="5.0.4" />
     <engine name="android" spec="7.1.2" />
 </widget>

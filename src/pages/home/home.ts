@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { GoogleMaps, GoogleMap, Environment, GoogleMapOptions, Marker, GoogleMapsEvent } from '@ionic-native/google-maps';
+
+import leaflet from 'leaflet';
+import { Geolocation } from '@ionic-native/geolocation';
+import { StatusBar } from '@ionic-native/status-bar';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  map: GoogleMap;
-
+  @ViewChild('map') mapContainer: ElementRef;
+  map: any;
   constructor(public navCtrl: NavController) {
   }
 
@@ -18,38 +20,32 @@ export class HomePage {
   }
 
   loadMap() {
-
-    // This code is necessary for browser
-    // Environment.setEnv({
-    //   'API_KEY_FOR_BROWSER_RELEASE': '',
-    //   'API_KEY_FOR_BROWSER_DEBUG': ''
-    // });
-
-    let mapOptions: GoogleMapOptions = {
-      camera: {
-         target: {
-           lat: 43.0741904,
-           lng: -89.3809802
-         },
-         zoom: 18,
-         tilt: 30
-       }
-    };
-
-    this.map = GoogleMaps.create('map_canvas', mapOptions);
-
-    let marker: Marker = this.map.addMarkerSync({
-      title: 'Ionic',
-      icon: 'blue',
-      animation: 'DROP',
-      position: {
-        lat: 43.0741904,
-        lng: -89.3809802
-      }
-    });
-    marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-      alert('clicked');
-    });
+    let options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0,
+      zoomControl: false,
+    }
+    this.map = leaflet.map("map", options).fitWorld();
+    leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attributions: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      maxZoom: 18
+    }).addTo(this.map);
+    this.map.locate({
+      setView: true,
+      maxZoom: 10
+    }).on('locationfound', (e) => {
+      let markerGroup = leaflet.featureGroup();
+      let marker: any = leaflet.marker([e.latitude, e.longitude]).on('click', () => {
+        alert('Marker clicked');
+      })
+      console.log(e);
+      markerGroup.addLayer(marker);
+      this.map.addLayer(markerGroup);
+      }).on('locationerror', (err) => {
+        alert(err.message);
+      });
+    // this.map.setView([12.8797, 121.7740], 6);
   }
 
 }

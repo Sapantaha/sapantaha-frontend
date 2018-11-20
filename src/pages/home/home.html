@@ -1,17 +1,19 @@
-<ion-header>
+<!-- <ion-header>
   <ion-navbar>
     <ion-title>
       Ionic Blank
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-  <div id="map_canvas" class="mapa">
-    <button ion-button (click)="onButtonClick($event)">Start demo</button>
+<ion-content>
+  <!-- <div class="map-navigation-container">
+    <input type="text" placeholder="Search Location/Hanapin ang lokasyon">
+  </div> -->
+  <div id="map"></div>
+  <div class="current-location">
+    <button ion-button outline round icon-only color="dark">
+      <ion-icon name="md-compass"></ion-icon>
+    </button>
   </div>
 </ion-content>
