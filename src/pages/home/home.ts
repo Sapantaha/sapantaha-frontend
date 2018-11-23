@@ -33,9 +33,11 @@ export class HomePage {
     }).addTo(this.map);
     this.map.locate({
       setView: true,
-      maxZoom: 10
+      maxZoom: 10,
+      watch: true
     }).on('locationfound', (e) => {
       let markerGroup = leaflet.featureGroup();
+      alert(`Latitude:${e.latitude} Longitude: ${e.longitude}`);
       let marker: any = leaflet.marker([e.latitude, e.longitude]).on('click', () => {
         alert('Marker clicked');
       })
