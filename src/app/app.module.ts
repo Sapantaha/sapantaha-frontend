@@ -13,6 +13,8 @@ import { LoginPage } from '../pages/login/login';
 import { ReportPage } from '../pages/report/report';
 import { HelpPage } from '../pages/help/help';
 import { AboutPage } from '../pages/about/about';
+import { RoutePage } from '../pages/route/route';
+import { RegisterPage } from '../pages/register/register';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { AboutPage } from '../pages/about/about';
     LoginPage,
     ReportPage,
     HelpPage,
-    AboutPage
+    AboutPage,
+    RoutePage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,9 @@ import { AboutPage } from '../pages/about/about';
     LoginPage,
     ReportPage,
     HelpPage,
-    AboutPage
+    AboutPage,
+    RoutePage,
+    RegisterPage
   ],
   providers: [
     StatusBar,

@@ -9,29 +9,42 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Log in</ion-title>
+    <ion-title>Sapantaha Login</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding text-center class="body">
 
-    <ion-list>
+<div class="login-container">
 
-        <ion-item>
-          <ion-label floating>Username</ion-label>
-          <ion-input type="text" #username></ion-input>
-        </ion-item>
-      
-        <ion-item>
-          <ion-label floating>Password</ion-label>
-          <ion-input type="password" #password></ion-input>
-        </ion-item>
-      
-      </ion-list>
-
-      <div padding>
-          <button block ion-button (click)="signIn()">Sign In</button>
+    <div class="logo-container">
+        <img src="../../assets/imgs/sapantahalogo.png" alt="Sapantaha-Logo" class="sapantaha-logo">
       </div>
+
+
+    <form>
+        <div class="form-group">
+            <input type="text" class="login-input"  placeholder="Username"  name="email" >
+           
+        </div>
+        <div class="form-group">
+            <input type="password" class="login-input" placeholder="Password" name="password" >
+          
+        </div>
+        <div class="form-group">
+          <button ion-button round class="login-button" type="submit"> Login</button>
+        </div>
+      </form>
+
+  <div>
+      <a>Forgot password?</a>
+    </div>
+  </div>
+  
+      <div class="register-section">
+        <span>New member? <a (click)="signUp()">Register here</a></span>
+      </div>
+
 
 </ion-content>

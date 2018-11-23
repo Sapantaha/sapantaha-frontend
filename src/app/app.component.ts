@@ -11,6 +11,7 @@ import { ReportPage } from '../pages/report/report';
 import { HelpPage } from '../pages/help/help';
 import { AboutPage } from '../pages/about/about';
 
+
 @Component({
   templateUrl: 'app.html'
 })

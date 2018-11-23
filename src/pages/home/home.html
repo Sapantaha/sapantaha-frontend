@@ -3,13 +3,21 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    
+    <div class="icon-left">
+       <ion-icon name="search"  (click)="searchRoute()" float-right>  </ion-icon>
+    </div>
+
+
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <div class="map-navigation-container">
-    <input type="text" placeholder="Search Location/Hanapin ang lokasyon">
+    <!-- <input type="text" placeholder="Search Location/Hanapin ang lokasyon"> -->
   </div>
   <div id="map"></div>
 </ion-content>
+
+
+
