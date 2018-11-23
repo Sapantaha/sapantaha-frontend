@@ -52,6 +52,10 @@ export class LoginPage {
   signUp() {
     this.navCtrl.push(RegisterPage)
   }
+  
+  previous_page() {
+    this.navCtrl.pop();
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');

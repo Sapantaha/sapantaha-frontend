@@ -43,11 +43,11 @@ export class HomePage {
       let marker: any = leaflet.marker([e.latitude, e.longitude]).on('click', () => {
         alert('Marker clicked');
       })
-      console.log(e);
+      // console.log(e);
       markerGroup.addLayer(marker);
       this.map.addLayer(markerGroup);
       }).on('locationerror', (err) => {
-        alert(err.message);
+        // alert(err.message);
       });
     // this.map.setView([12.8797, 121.7740], 6);
   }
